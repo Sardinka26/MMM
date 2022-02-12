@@ -9,8 +9,11 @@ public class TestComputer {
         Keyboard keyboard1 = new Keyboard("Что то там", true, 10);
 
         Computer computer1 = new Computer(processor1, computerRAM1, informationStorage1, screen1, keyboard1,
-                100, "Sony", "VivoBook");
+                100, Vendor.SONY, "VivoBook");
         computer1.addTotalWeightComputer();
         System.out.println(computer1.toString());
+
+        Computer computer = new Computer(processor1, computerRAM1, informationStorage1, screen1, keyboard1,
+                100, Vendor.ASUS, "VivoBook");
     }
 }

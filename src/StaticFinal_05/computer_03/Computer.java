@@ -7,10 +7,11 @@ public class Computer {
     private Screen screen;
     private Keyboard keyboard;
     private double totalWeightComputer;
-    private final String VENDOR;
+    private final Vendor VENDOR;
     private final String NAME;
 
-    public Computer(Processor processor, ComputerRAM computerRAM, InformationStorage informationStorage, Screen screen, Keyboard keyboard, double totalWeightComputer, String VENDOR, String NAME) {
+    public Computer(Processor processor, ComputerRAM computerRAM, InformationStorage informationStorage, Screen screen,
+                    Keyboard keyboard, double totalWeightComputer, Vendor VENDOR, String NAME) {
         this.processor = processor;
         this.computerRAM = computerRAM;
         this.informationStorage = informationStorage;
@@ -55,7 +56,7 @@ public class Computer {
 
     }
 
-    public String getVENDOR() {
+    public Vendor getVENDOR() {
         return VENDOR;
     }
 
