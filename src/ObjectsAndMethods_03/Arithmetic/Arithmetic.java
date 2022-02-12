@@ -10,8 +10,14 @@ public class Arithmetic {
         this.number2 = number2;
     }
 
-    public int sum() {
-        return number1 + number2;
+    public int sum(int a, int b) {
+        if (a < 0) {
+            return b;
+        }
+        if (b < 0) {
+            return a;
+        }
+        return a + b;
     }
 
     public int multiplication() {
