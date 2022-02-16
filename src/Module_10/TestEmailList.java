@@ -10,7 +10,7 @@ public class TestEmailList {
     private static Scanner scanner = new Scanner(System.in);
     private static EmailList emailList = new EmailList();
     private static final String LIST = "LIST";
-    private static final String ADD = "ADD\\s(?i:([a-z0-9]+)@([a-z0-9]+)\\.ru)";
+    private static final String ADD = "ADD.+";
 
     public static void main(String[] args) {
 
@@ -25,10 +25,8 @@ public class TestEmailList {
                 continue;
             }
             if (input.matches(ADD)) {
-                String text = input.replaceFirst("ADD", "").trim().toLowerCase();
-                emailList.add(text);
-            } else {
-                System.out.println(WRONG_EMAIL_ANSWER);
+                emailList.add(input);
+
             }
         }
     }
