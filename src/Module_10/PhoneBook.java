@@ -31,7 +31,7 @@ public class PhoneBook {
     }
 
     public String getContactByPhone(String phone) {
-        System.out.println(mapContact.get(phone) + " " + phone);
+        System.out.println(mapContact.get(phone) + " -" + phone);
         return "";
     }
 
@@ -41,11 +41,9 @@ public class PhoneBook {
         for (Map.Entry<String, String> objectEntrySet : entrySet) {
             if (name.equals(objectEntrySet.getValue())) {
                 treeSet.add(objectEntrySet.getKey());
-                System.out.println(name + " " + treeSet.toString().replaceAll("^\\[|\\]$", " "));
-            } else {
-                return new TreeSet<>();
             }
-        }
+
+        } System.out.println(name + " -" + treeSet.toString().replaceAll("^\\[|\\]$", " "));
 
         return treeSet;
     }
@@ -59,7 +57,7 @@ public class PhoneBook {
             for (Map.Entry<String, String> entry : mapContact.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                System.out.println(value + " " + key);
+                System.out.println(value + " -" + key);
             }
         }
         return treeSet;
