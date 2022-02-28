@@ -12,7 +12,7 @@ public class TestPhoneBook {
     private static final String MESSAGE_USER_ERROR_NAME_PHONE = "Такого имени в телефонной книге нет";
     private static final String MESSAGE_USER_INPUT_NUMBER_PHONE = "Введите номер телефона для абонента";
     private static final String LIST = "LIST";
-    private static final String NUMBER = "79\\d{9}";
+    private static final String NUMBER = "79\\d{9}";                  // "79\\d{9}";
     private static final String NAME = "[А-Я][а-я]+";
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class TestPhoneBook {
             System.out.print("Введите номер, имя или команду:" + System.lineSeparator());
             String input = scanner.nextLine();
 
-            if(input.matches(LIST)){
+            if (input.matches(LIST)) {
                 phoneBook.getAllContacts();
                 continue;
             }
@@ -35,6 +35,10 @@ public class TestPhoneBook {
             }
             if (input.matches(NAME) && phoneBook.isNameContains(input)) {
                 phoneBook.getContactByName(input);
+                continue;
+            }
+            if (input.matches(NUMBER) && phoneBook.isNumberContains(input)) {
+                phoneBook.getContactByPhone(input);
                 continue;
             }
             if (input.matches(NAME) && phoneBook.isNameNotContains(input)) {
@@ -51,11 +55,7 @@ public class TestPhoneBook {
                 }
                 continue;
             }
-            if (input.matches(NUMBER) && phoneBook.isNumberContains(input)) {
-                phoneBook.getContactByPhone(input);
-                continue;
-            }
-            if (input.matches(NUMBER) && phoneBook.isNumberNotContains(input)) {
+            if (input.matches(NUMBER) || phoneBook.isNumberNotContains(input)) {
                 System.out.println(MESSAGE_USER_ERROR_NAME_PHONE);
                 System.out.println(MESSAGE_USER_INPUT_NAME_PHONE + "\"" + input + "\"" + ":");
                 String inputName = scanner.nextLine(); // когда вводят Имя
@@ -72,3 +72,4 @@ public class TestPhoneBook {
         }
     }
 }
+
