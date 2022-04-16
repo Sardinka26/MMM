@@ -3,7 +3,6 @@ package Module_10;
 import java.util.*;
 
 public class CoolNumbers {
-
     public static List<String> generateCoolNumbers() {
         ArrayList<String> listNumber = new ArrayList<>();
         final String[] letters = new String[]{"А", "В", "Е", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х"};
@@ -33,26 +32,31 @@ public class CoolNumbers {
     public static boolean bruteForceSearchInList(List<String> list, String number) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equals(number)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
+
     public static boolean binarySearchInList(List<String> sortedList, String number) {
-        if (Collections.binarySearch(sortedList, number) == 0) {
-        }
-        return true;
+        return (Collections.binarySearch(sortedList, number) >= 0);
     }
 
     public static boolean searchInHashSet(HashSet<String> hashSet, String number) {
         if (hashSet.contains(number)) {
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 
     public static boolean searchInTreeSet(TreeSet<String> treeSet, String number) {
         if (treeSet.contains(number)) {
+            return true;
+        } else {
+            return false;
         }
-        return true;
+
     }
 }

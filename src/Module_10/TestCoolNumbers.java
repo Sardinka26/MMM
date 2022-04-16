@@ -1,9 +1,6 @@
 package Module_10;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
 
 public class TestCoolNumbers {
     private static Scanner scanner = new Scanner(System.in);
@@ -16,42 +13,56 @@ public class TestCoolNumbers {
     private static final String ANSWER_SYSTEM_SEARCH_BINARY = "Бинарный поиск : ";
     private static final String ANSWER_SYSTEM_SEARCH_HASH_SET = "Поиск в HashSet: ";
     private static final String ANSWER_SYSTEM_SEARCH_TREE_SET = "Поиск в TreeSet: ";
-    static long timeArray1 = System.nanoTime();
-    static long timeArray2 = System.nanoTime();
-    static long timeArray3 = System.nanoTime();
-    static long timeArray4 = System.nanoTime();
 
     public static void main(String[] args) {
-
         while (true) {
             System.out.print(MESSAGE_USER_INPUT_AUTO_NUMBER + System.lineSeparator());
             String inputAutoNumberUser = scanner.nextLine();
             List<String> listGenerated = CoolNumbers.generateCoolNumbers();
-            CoolNumbers.bruteForceSearchInList(listGenerated, inputAutoNumberUser);
 
+            long startTime1 = System.nanoTime();
             if (!CoolNumbers.bruteForceSearchInList(listGenerated, inputAutoNumberUser)) {
-                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray1) + " " + "нс");
+
+                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime1) + " " + "нс");
             } else {
-                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray1) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime1) + " " + "нс");
             }
+
+            Collections.sort(listGenerated);
+            long startTime2 = System.nanoTime();
             if (!CoolNumbers.binarySearchInList(listGenerated, inputAutoNumberUser)) {
-                System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray2) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime2) + " " + "нс");
             } else {
-                System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray2) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime2) + " " + "нс");
             }
+
+
             HashSet<String> listHashSet = new HashSet<>(listGenerated);
+            long startTime3 = System.nanoTime();
             if (!CoolNumbers.searchInHashSet(listHashSet, inputAutoNumberUser)) {
-                System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray3) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime3) + " " + "нс");
             } else {
-                System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray3) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime3) + " " + "нс");
             }
+
             TreeSet<String> listTreeSet = new TreeSet<>(listGenerated);
+            long startTime4 = System.nanoTime();
             if (!CoolNumbers.searchInTreeSet(listTreeSet, inputAutoNumberUser)) {
-                System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray4) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM_ERROR + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime4) + " " + "нс");
             } else {
-                System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME + (System.nanoTime() - timeArray4) + " " + "нс");
+                System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM + " " + ANSWER_SYSTEM_TIME
+                        + (System.nanoTime() - startTime4) + " " + "нс");
             }
+
             System.out.println();
         }
     }
 }
+
