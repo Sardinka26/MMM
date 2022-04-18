@@ -57,7 +57,7 @@ public class TestCoolNumbers_Option_2 {
     }
 
     public static void ptint(String TYPE_ANSWER, String answerTime, long time) {
-        System.out.println(TYPE_ANSWER + answerTime + (System.nanoTime() - time) + " " + "нс");
+        System.out.println(TYPE_ANSWER + answerTime + ANSWER_SYSTEM_TIME + (System.nanoTime() - time) + " " + "нс");
     }
 }
 
