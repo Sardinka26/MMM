@@ -1,11 +1,23 @@
 package Module_11_Company;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class TEST {
     public static void main(String[] args) {
-        Manager manager1 = new Manager("Иван", "Петров", 200);
-        TopManager topManager1 = new TopManager("Петя","Иванов",500);
-        Operator operator1 = new Operator("Маша","Сидорова",100);
-        Company company1 = new Company();
-        System.out.println(company1.getIncomeCompany());
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Manager(250));
+        employees.add(new TopManager(500));
+        employees.add(new Operator(100));
+        employees.add(new Manager(300));
+        employees.add(new TopManager(700));
+        employees.add(new Operator(1500));
+        Company company = new Company(employees);
+
+
+        System.out.println(company);
+
+
     }
 }

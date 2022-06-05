@@ -22,41 +22,41 @@ public class TestCoolNumbers_Option_2 {
             String inputAutoNumberUser = scanner.nextLine();
 
             long startTime1 = System.nanoTime();
-            if (!CoolNumbers_Option_2.bruteForceSearchInList(listGenerated, inputAutoNumberUser)) {
-                ptint(ANSWER_SYSTEM_SEARCH_ARRAY_LIST, ANSWER_SYSTEM_ERROR, startTime1);
+            if (CoolNumbers_Option_2.bruteForceSearchInList(listGenerated, inputAutoNumberUser)) {
+                print(ANSWER_SYSTEM_SEARCH_ARRAY_LIST, ANSWER_SYSTEM, startTime1);
             } else {
-                ptint(ANSWER_SYSTEM_SEARCH_ARRAY_LIST, ANSWER_SYSTEM, startTime1);
+                print(ANSWER_SYSTEM_SEARCH_ARRAY_LIST, ANSWER_SYSTEM_ERROR, startTime1);
             }
 
             Collections.sort(listGenerated);
             long startTime2 = System.nanoTime();
-            if (!CoolNumbers_Option_2.binarySearchInList(listGenerated, inputAutoNumberUser)) {
-                TestCoolNumbers_Option_2.ptint(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM_ERROR, startTime2);
+            if (CoolNumbers_Option_2.binarySearchInList(listGenerated, inputAutoNumberUser)) {
+                TestCoolNumbers_Option_2.print(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM, startTime2);
             } else {
-                ptint(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM, startTime2);
+                print(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM_ERROR, startTime2);
             }
 
             HashSet<String> listHashSet = new HashSet<>(listGenerated);
             long startTime3 = System.nanoTime();
-            if (!CoolNumbers_Option_2.searchInHashSet(listHashSet, inputAutoNumberUser)) {
-                ptint(ANSWER_SYSTEM_SEARCH_HASH_SET, ANSWER_SYSTEM_ERROR, startTime3);
+            if (CoolNumbers_Option_2.searchInHashSet(listHashSet, inputAutoNumberUser)) {
+                print(ANSWER_SYSTEM_SEARCH_HASH_SET, ANSWER_SYSTEM, startTime3);
             } else {
-                ptint(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM, startTime3);
+                print(ANSWER_SYSTEM_SEARCH_BINARY, ANSWER_SYSTEM_ERROR, startTime3);
             }
 
             TreeSet<String> listTreeSet = new TreeSet<>(listGenerated);
             long startTime4 = System.nanoTime();
-            if (!CoolNumbers_Option_2.searchInTreeSet(listTreeSet, inputAutoNumberUser)) {
-                ptint(ANSWER_SYSTEM_SEARCH_TREE_SET, ANSWER_SYSTEM_ERROR, startTime4);
+            if (CoolNumbers_Option_2.searchInTreeSet(listTreeSet, inputAutoNumberUser)) {
+                print(ANSWER_SYSTEM_SEARCH_TREE_SET, ANSWER_SYSTEM, startTime4);
             } else {
-                ptint(ANSWER_SYSTEM_SEARCH_TREE_SET, ANSWER_SYSTEM, startTime4);
+                print(ANSWER_SYSTEM_SEARCH_TREE_SET, ANSWER_SYSTEM_ERROR, startTime4);
             }
 
         }
 
     }
 
-    public static void ptint(String TYPE_ANSWER, String answerTime, long time) {
+    public static void print(String TYPE_ANSWER, String answerTime, long time) {
         System.out.println(TYPE_ANSWER + answerTime + ANSWER_SYSTEM_TIME + (System.nanoTime() - time) + " " + "нс");
     }
 }

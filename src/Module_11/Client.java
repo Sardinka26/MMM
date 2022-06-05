@@ -1,14 +1,11 @@
 package Module_11;
 
-public class BankAccount {
-   private double balance = 0.0;
+public abstract class Client {
+    private double balance = 0.0;
 
-    public double getAmount() {
+    public double getBalance() {
         return balance;
-    }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 
     public void put(double amountToPut) {
@@ -22,4 +19,5 @@ public class BankAccount {
             balance = balance - amountToTake;
         }
     }
+
 }

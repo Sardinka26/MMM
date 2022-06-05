@@ -4,8 +4,9 @@ public class CardAccount extends BankAccount {
 
     @Override
     public void take(double amountToTake) {
-        if (amountToTake > 0 && amountToTake < balance) {
-            balance = balance - (amountToTake + ((amountToTake * 1) / 100));
+        if (amountToTake > 0 && amountToTake < super.getAmount()) {
+            double balanceCard = super.getAmount() - (amountToTake + ((amountToTake * 1) / 100));
+             super.setBalance(balanceCard);
         }
     }
 }

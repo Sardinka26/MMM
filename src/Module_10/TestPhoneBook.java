@@ -12,13 +12,16 @@ public class TestPhoneBook {
     private static final String MESSAGE_USER_ERROR_NAME_PHONE = "Такого имени в телефонной книге нет";
     private static final String MESSAGE_USER_INPUT_NUMBER_PHONE = "Введите номер телефона для абонента";
     private static final String LIST = "LIST";
-    private static final String NUMBER = "79\\d{9}";                  // "79\\d{9}";
+    private static final String NUMBER = "79\\d{9}";
     private static final String NAME = "[А-Я][а-я]+";
 
     public static void main(String[] args) {
         phoneBook.addContact("79348882266", "Катя");
         phoneBook.addContact("79348880000", "Петр");
-        phoneBook.addContact("79348880001", "Катя");
+        phoneBook.addContact("79348880046", "Катя");
+        phoneBook.addContact("79348887866", "Яна");
+        phoneBook.addContact("79388880000", "Олег");
+        phoneBook.addContact("79348880001", "Аня");
 
         while (true) {
             System.out.print("Введите номер, имя или команду:" + System.lineSeparator());

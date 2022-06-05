@@ -2,7 +2,7 @@ package Module_10;
 
 import java.util.*;
 
-public class CoolNumbers {
+public class CoolNumbers_Option_1 {
     private static final String ANSWER_SYSTEM_ERROR = "Номер НЕ найден: ";
     private static final String ANSWER_SYSTEM = "Номер найден! ";
     private static final String ANSWER_SYSTEM_SEARCH_ARRAY_LIST = "Поиск перебором: ";
@@ -36,50 +36,40 @@ public class CoolNumbers {
         return listNumber;
     }
 
-    public static boolean bruteForceSearchInList(List<String> list, String number) {
+    public static String bruteForceSearchInList(List<String> list, String number) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equals(number)) {
-                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM);
-                return true;
-            } else {
-                System.out.println(ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM_ERROR);
+                return ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM;
             }
-        }
-        return false;
+        } return ANSWER_SYSTEM_SEARCH_ARRAY_LIST + ANSWER_SYSTEM_ERROR;
     }
 
 
-    public static boolean binarySearchInList(List<String> sortedList, String number) {
+    public static String binarySearchInList(List<String> sortedList, String number) {
         if (Collections.binarySearch(sortedList, number) >= 0) {
-            System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM);
-            return true;
+            return ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM;
         } else {
-            System.out.println(ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM_ERROR);
+            return ANSWER_SYSTEM_SEARCH_BINARY + ANSWER_SYSTEM_ERROR;
         }
-        return false;
     }
 
-    public static boolean searchInHashSet(HashSet<String> hashSet, String number) {
+    public static String searchInHashSet(HashSet<String> hashSet, String number) {
         if (hashSet.contains(number)) {
-            System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM);
-            return true;
+            return ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM;
         } else {
-            System.out.println(ANSWER_SYSTEM_SEARCH_HASH_SET + ANSWER_SYSTEM_ERROR);
+            return ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM_ERROR;
         }
-        return false;
     }
 
 
-    public static boolean searchInTreeSet(TreeSet<String> treeSet, String number) {
+    public static String searchInTreeSet(TreeSet<String> treeSet, String number) {
         if (treeSet.contains(number)) {
-            System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM);
-            return true;
+            return ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM;
         } else {
-            System.out.println(ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM_ERROR);
+            return ANSWER_SYSTEM_SEARCH_TREE_SET + ANSWER_SYSTEM_ERROR;
         }
-        return false;
-    }
 
+    }
 }
 
 

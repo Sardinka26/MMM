@@ -20,9 +20,10 @@ public class DepositAccount extends BankAccount {
         int countMonths = period.getMonths();
         int countYear = period.getYears();
 
-        if (amountToTake < balance && countMonths >= 1 ||
-                amountToTake < balance && countYear >= 1) {
-            balance = balance - amountToTake;
+        if (amountToTake < super.getAmount() && countMonths >= 1 ||
+                amountToTake < super.getAmount() && countYear >= 1) {
+            double balanceDeposit = super.getAmount() - amountToTake;
+            super.setBalance(balanceDeposit);
         }
     }
 }
