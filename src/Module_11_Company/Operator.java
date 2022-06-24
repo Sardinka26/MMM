@@ -2,21 +2,25 @@ package Module_11_Company;
 
 public class Operator implements Employee,Comparable <Operator>{
 
-    private double salary;
-    double monthSalary;
+    private double monthSalary;
     private Company company;
 
-    public Operator(double salary) {
-        this.salary = salary;
+    public Operator() {
+        this.monthSalary = 25_000;
     }
 
     @Override
     public double getMonthSalary() {
-        return salary;
+        return monthSalary;
+    }
+
+    @Override
+    public double earnMonthSalary() {
+        return monthSalary;
     }
 
     @Override
     public int compareTo(Operator o) {
-        return (int) (Math.round(getMonthSalary()) - (Math.round(o.getMonthSalary())));
+        return (int) (Math.round(this.getMonthSalary()) - (Math.round(o.getMonthSalary())));
     }
 }

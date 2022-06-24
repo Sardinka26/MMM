@@ -2,21 +2,22 @@ package Module_11_Company;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 public class TEST {
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Manager(250));
-        employees.add(new TopManager(500));
-        employees.add(new Operator(100));
-        employees.add(new Manager(300));
-        employees.add(new TopManager(700));
-        employees.add(new Operator(1500));
+        employees.add(new Manager());
+        employees.add(new TopManager());
+        employees.add(new Operator());
+        employees.add(new Manager());
+        employees.add(new TopManager());
+        employees.add(new Operator());
         Company company = new Company(employees);
 
-
-        System.out.println(company);
+        company.toString();
+       // System.out.println(company.getTopSalaryStaff());
 
 
     }
