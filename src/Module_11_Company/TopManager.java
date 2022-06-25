@@ -6,7 +6,7 @@ public class TopManager implements Employee, Comparable<TopManager> {
     private Company company;
 
     public TopManager() {
-        this.monthSalary = earnMonthSalary();
+        earnMonthSalary();
     }
 
     @Override
@@ -14,12 +14,18 @@ public class TopManager implements Employee, Comparable<TopManager> {
         return monthSalary;
     }
 
-    public double earnMonthSalary() {
+    public void earnMonthSalary() {
         salary = Math.random() * (250_000 - 150_000) + 150_000;
-        if (company.getIncomeCompany() > 10_000_000) {
+        if (company.calculateIncomeCompany() > 10_000_000) {
             monthSalary = salary + ((company.getIncomeCompany() * 150) / 100);
         }
-        return monthSalary;
+    }
+
+    @Override
+    public void createNewEmployee(int count) {
+        for (int i = 0; i <= count; i++) {
+            company.getEmployees().add(new TopManager());
+        }
     }
 
     @Override

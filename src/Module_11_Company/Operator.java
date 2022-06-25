@@ -1,7 +1,6 @@
 package Module_11_Company;
 
-public class Operator implements Employee,Comparable <Operator>{
-
+public class Operator implements Employee, Comparable<Operator> {
     private double monthSalary;
     private Company company;
 
@@ -15,8 +14,14 @@ public class Operator implements Employee,Comparable <Operator>{
     }
 
     @Override
-    public double earnMonthSalary() {
-        return monthSalary;
+    public void earnMonthSalary() {
+    }
+
+    @Override
+    public void createNewEmployee(int count) {
+        for (int i = 0; i <= count; i++) {
+            company.getEmployees().add(new Operator());
+        }
     }
 
     @Override

@@ -1,5 +1,4 @@
 package Module_11_Company;
-
 import java.util.Collections;
 import java.util.List;
 
@@ -14,6 +13,9 @@ public class Company {
         this.employees = employees;
     }
     public double getIncomeCompany() {
+        return incomeCompany;
+    }
+    public double calculateIncomeCompany() {
         return incomeCompany = Math.random() * 150_000_000;
     }
     public List<Employee> getEmployees() {
@@ -27,6 +29,9 @@ public class Company {
     }
     public void fireEmployee(Employee emp) {
         employees.remove(emp);
+    }
+    List<Employee> getTopSalaryStaff(int count){
+        return employees;
     }
 
     @Override

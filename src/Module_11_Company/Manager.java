@@ -1,8 +1,9 @@
 package Module_11_Company;
+
 import java.util.Comparator;
 import java.util.List;
 
-public class Manager implements Employee,Comparable <Manager> {
+public class Manager implements Employee, Comparable<Manager> {
 
     private double salary;
     private double monthSalary;
@@ -10,7 +11,7 @@ public class Manager implements Employee,Comparable <Manager> {
     private Company company;
 
     public Manager() {
-        this.monthSalary = earnMonthSalary();
+        earnMonthSalary();
     }
 
     @Override
@@ -19,10 +20,17 @@ public class Manager implements Employee,Comparable <Manager> {
     }
 
     @Override
-    public double earnMonthSalary() {
+    public void earnMonthSalary() {
         salary = Math.random() * (100_000 - 50_000) + 50_000;
         salesOfManager = Math.random() * (140000 - 115000) + 115000;
-        return monthSalary = salary + ((salesOfManager * 5) / 100);
+        monthSalary = salary + ((salesOfManager * 5) / 100);
+    }
+
+    @Override
+    public void createNewEmployee(int count) {
+        for (int i = 0; i <= count; i++) {
+            company.getEmployees().add(new Manager());
+        }
     }
 
 
@@ -33,7 +41,7 @@ public class Manager implements Employee,Comparable <Manager> {
     @Override
     public int compareTo(Manager o) {
         return (int)
-                (Math.round(this.getSalary()) - (Math.round(o.getMonthSalary())));
+                (Math.round(this.getMonthSalary()) - (Math.round(o.getMonthSalary())));
     }
 
 }

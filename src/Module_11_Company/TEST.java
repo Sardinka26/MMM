@@ -16,8 +16,10 @@ public class TEST {
         employees.add(new Operator());
         Company company = new Company(employees);
 
-        company.toString();
-       // System.out.println(company.getTopSalaryStaff());
+
+
+        System.out.println(company.getEmployees());
+
 
 
     }
